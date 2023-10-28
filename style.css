@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  background-color: #000;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.container .boxes {
+  width: 50%;
+  height: 300px;
+  background-color: #ddd;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .container .boxes {
+    width: 65%;
+  }
+}
+@media (max-width: 552px) {
+  .container .boxes {
+    width: 80%;
+  }
+}
+.container .boxes .box {
+  background-color: #000;
+  display: flex;
+  align-items: Center;
+  justify-content: center;
+  cursor: pointer;
+}
+.container .boxes .box.clicked {
+  cursor: not-allowed;
+}
+
+.container .boxes .box.clicked img,
+.container .boxes .box.clicked:hover img {
+  opacity: 1;
+}
+.container .boxes .box img {
+  opacity: 0;
+  width: 64px;
+  height: 64px;
+}
+.container .boxes .box:hover img {
+  opacity: 0.2;
+}
+.win-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  gap: 30px;
+  justify-content: Center;
+  flex-direction: column;
+  font-size: 30px;
+  color: #fff;
+}
+.win-message.show {
+  display: flex;
+}
+.win-message button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  background-color: black;
+  color: #fff;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.win-message button:hover {
+  background-color: #fff;
+  color: #000;
+}
